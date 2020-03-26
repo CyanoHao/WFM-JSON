@@ -552,9 +552,12 @@ class serializer
 
                 // MODIFIED FOR WFM
                 case error_handler_t::as_is:
-                if (bytes > 0)
                 {
-                    o->write_characters(string_buffer.data(), bytes);
+                    if (bytes > 0)
+                    {
+                        o->write_characters(string_buffer.data(), bytes);
+                    }
+                    break;
                 }
 
                 default:            // LCOV_EXCL_LINE
